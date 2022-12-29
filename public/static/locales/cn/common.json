@@ -1,0 +1,50 @@
+{
+    "header": {
+        "Login": "登录",
+        "home": "主页",
+        "project": "项目",
+        "mintingInfo": "信息 MINTING",
+        "event": "事件",
+        "community": "社区",
+        "myNFT": "NFT 矿"
+    },
+    "home": {
+        "myNFT": "NFT 矿",
+        "emptyMyNFT": "我的 NFT 都没有注册",
+        "community": {
+            "Community": "社区",
+            "NFTGuide": "NFT 指导",
+            "Board(Forum)": "董事会论坛",
+            "NFTBoast": "NFT 吹牛",
+            "NFTNews": "NFT 信息",
+            "Notification": "笔记"
+        },
+        "seeMore": "看更多+",
+        "MintingSchedule": "日程"
+    },
+    "community": {
+        "Community": "자유게시판",
+        "NFTGuide": "NFT 가이드",
+        "Board(Forum)": "자유 게시판",
+        "NFTBoast": "NFT판매하기",
+        "NFTNews": "NFT뉴스",
+        "Notification": "공지사항",
+        "board": {
+            "all": "전체",
+            "daily": "일상",
+            "humor": "유머",
+            "tips": "나의팁",
+            "recommend": "나의추천"
+        }
+    },
+    "login": {
+        "requiredNickname": "Please enter nickname",
+        "requiredEmail": "Please enter email",
+        "forgotUsername": "Username not found",
+        "formatEmail": "Invalid email, please try again.",
+        "unregisteredNickname": " Unregistered nickname, please try again.",
+        "unregisteredEmail": "Unregistered email, please try again.",
+        "emailAlreadyRegistered": "This email is already in use. Please try another one",
+        "nicknameAlreadyRegistered": "This nickname is already in use. Please try another one"
+    }
+}

@@ -31,3 +31,5 @@ const UserProvider = (props: any) => {
         </UserContext.Provider>
     )
 }
+
+export default UserProvider
