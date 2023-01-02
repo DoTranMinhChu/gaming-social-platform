@@ -1,0 +1,26 @@
+.groupBtn {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: grid;
+    button {
+        padding: 10px;
+        border-radius: 8px;
+        margin: 10px 20px;
+        background: #fff;
+        box-shadow: 0 10px 10px 3.42px rgb(0 0 0 / 30%);
+        cursor: pointer;
+    }
+}
+@media screen and (max-width: 767px) {
+    .groupBtn {
+        button {
+            padding: 5px;
+            border-radius: 8px;
+            margin: 8px 15px;
+            background: #fff;
+            box-shadow: 0 10px 10px 3.42px rgb(0 0 0 / 30%);
+        }
+    }
+}
