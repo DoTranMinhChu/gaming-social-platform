@@ -11,11 +11,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import RadioOutLinedIcon from '@mui/icons-material/RadioOutLined';
 import ExploreOutLinedIcon from '@mui/icons-material/ExploreOutLined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import styles from './Navbar.module.scss';
+import Link from 'next/link'
 
 interface Props {
     window?: () => Window;
@@ -31,7 +32,7 @@ export default function Navbar(props: Props) {
         },
         {
             title: 'Explore',
-            url: 'pricing',
+            url: 'explore',
             icon: <ExploreOutLinedIcon />,
         },
         {
@@ -67,26 +68,17 @@ export default function Navbar(props: Props) {
         <AppBar position="static">
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
                         href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
+                        className={styles['logo-web']}
                     >
                         LOGO
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box className={styles['menu-mobile']}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -111,9 +103,7 @@ export default function Navbar(props: Props) {
                             }}
                             open={Boolean(anchorElNav)}
                             onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
+                            className={styles['xs-block-md-none']}
                         >
                             {pages.map((page) => (
 
@@ -123,44 +113,36 @@ export default function Navbar(props: Props) {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
                         component="a"
                         href=""
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
+                        className={styles['logo-mobile']}
                     >
                         LOGO
                     </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box className={styles['menu-web']}>
                         {pages.map((page) => (
+                            <Link href={page.url} key={page.url}>
+                                <Button
+                                    key={page.url}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white' }}
+                                    variant="outlined" startIcon={page.icon}
+                                >
 
-                            <Button
-                                key={page.url}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white' }}
-                                variant="outlined" startIcon={page.icon}
-                            >
+                                    {page.title}
+                                </Button>
+                            </Link>
 
-                                {page.title}
-                            </Button>
                         ))}
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="https://avatars.githubusercontent.com/u/86542102" />
                             </IconButton>
                         </Tooltip>
                         <Menu

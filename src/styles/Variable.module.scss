@@ -1,0 +1,80 @@
+// max-width: 320px (điện thoại di động, hiển thị chiều dọc)
+// max-width: 480px (điện thoại di động, hiển thị chiều ngang)
+// max-width: 768px (máy tính bảng loại to, hiển thị chiều dọc)
+// max-width: 1024px (máy tính bảng loại to, hiển thị chiều ngang)
+// min-width: 1025px (từ size này trở lên là danh cho desktop thông thường).
+$res_0-320 : "only screen and (min-width: 0px) and (max-width: 320px)";
+$res_321-480 : "only screen and (min-width: 321px) and (max-width: 480px)";
+$res_481-768 : "only screen and (min-width: 481px) and (max-width: 768px)";
+$res_769-1024 : "only screen and (min-width: 769px) and (max-width: 1024px)";
+$res_1025-1200 : "only screen and (min-width: 1025px) and (max-width: 1200px)";
+
+$res_xs : "only screen and (min-width: 0px)";
+$res_sm : "only screen and (min-width: 768px)";
+$res_md : "only screen and (min-width: 1024px)";
+$res_lg : "only screen and (min-width: 1200px)";
+$res_xl : "only screen and (min-width: 1536px)";
+
+@mixin responsive_0-320() {
+    @media #{$res_0-320} {
+        @content;
+    }
+}
+
+
+@mixin responsive_321-480() {
+    @media #{$res_321-480} {
+        @content;
+    }
+}
+
+@mixin responsive_481-768() {
+    @media #{$res_481-768} {
+        @content;
+    }
+}
+
+
+@mixin responsive_769-1024() {
+    @media #{$res_769-1024} {
+        @content;
+    }
+}
+
+@mixin responsive_769-1024() {
+    @media #{$res_769-1024} {
+        @content;
+    }
+}
+
+
+@mixin responsive_xs() {
+    @media #{$res_xs} {
+        @content;
+    }
+}
+
+
+@mixin responsive_sm() {
+    @media #{$res_sm} {
+        @content;
+    }
+}
+
+@mixin responsive_md() {
+    @media #{$res_md} {
+        @content;
+    }
+}
+
+@mixin responsive_lg() {
+    @media #{$res_lg} {
+        @content;
+    }
+}
+
+@mixin responsive_xl() {
+    @media #{$res_xl} {
+        @content;
+    }
+}

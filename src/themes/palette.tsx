@@ -7,34 +7,54 @@ function createGradient(color1: any, color2: any) {
 }
 
 // SETUP COLORS
+
 const GREY = {
     0: '#FFFFFF',
     100: '#F9FAFB',
     200: '#F4F6F8',
     300: '#DFE3E8',
     400: '#C4CDD5',
-    500: '#919EAB',
+    500: '#9295A0',
     600: '#637381',
     700: '#454F5B',
-    800: '#212B36',
-    900: '#161C24',
-    500_8: alpha('#919EAB', 0.08),
-    500_12: alpha('#919EAB', 0.12),
-    500_16: alpha('#919EAB', 0.16),
-    500_24: alpha('#919EAB', 0.24),
-    500_32: alpha('#919EAB', 0.32),
-    500_48: alpha('#919EAB', 0.48),
-    500_56: alpha('#919EAB', 0.56),
-    500_80: alpha('#919EAB', 0.8),
+    800: '#0E1320',
+    900: '#212B36',
+    500_8: alpha('#9295A0', 0.08),
+    500_12: alpha('#9295A0', 0.12),
+    500_16: alpha('#9295A0', 0.16),
+    500_24: alpha('#9295A0', 0.24),
+    500_32: alpha('#9295A0', 0.32),
+    500_48: alpha('#9295A0', 0.48),
+    500_56: alpha('#9295A0', 0.56),
+    500_80: alpha('#9295A0', 0.8),
 };
-
+const MIDNIGHT_BLUE = {
+    0: '#152B4B',
+    100: '#191970',
+    200: '#131846',
+    300: '#181F36',
+    400: '#13192A',
+    500: '#13182a',
+    600: '#13162e',
+    700: '#0e1024',
+    800: '#0D1220',
+    900: '#070a12',
+    500_8: alpha('#13182a', 0.08),
+    500_12: alpha('#13182a', 0.12),
+    500_16: alpha('#13182a', 0.16),
+    500_24: alpha('#13182a', 0.24),
+    500_32: alpha('#13182a', 0.32),
+    500_48: alpha('#13182a', 0.48),
+    500_56: alpha('#13182a', 0.56),
+    500_80: alpha('#13182a', 0.8),
+}
 const PRIMARY = {
-    lighter: '#D1E9FC',
-    light: '#76B0F1',
-    main: '#2065D1',
-    dark: '#103996',
-    darker: '#061B64',
-    contrastText: '#fff',
+    lighter: MIDNIGHT_BLUE[0],
+    light: MIDNIGHT_BLUE[100],
+    main: MIDNIGHT_BLUE[300],
+    dark: MIDNIGHT_BLUE[800],
+    darker: MIDNIGHT_BLUE[900],
+    contrastText: GREY[0],
 };
 
 const SECONDARY = {
@@ -114,6 +134,7 @@ const COMMON = {
     blue: '#4F6BC8',
     specialBlue: '#405AB0',
     activeSpecialBlue: '#284195',
+    midnightBlue: '#181F36'
 };
 
 const palette = {
@@ -129,7 +150,7 @@ const palette = {
     chart: CHART_COLORS,
     divider: GREY[500_24],
     text: { ...TEXT },
-    background: { paper: '#fff', default: GREY[100], neutral: GREY[200] },
+    // background: { paper: '#fff', default: GREY[100], neutral: GREY[200] },
     action: {
         active: GREY[600],
         hover: GREY[500_8],

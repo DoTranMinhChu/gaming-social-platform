@@ -5,12 +5,14 @@ import { customShadows } from './shadows';
 import typography from './typography';
 import componentsOverride from './overrides';
 // material
-import { CssBaseline, Theme } from '@mui/material';
+import { CssBaseline, Shadows, Theme } from '@mui/material';
 import {
     createTheme,
     StyledEngineProvider,
     ThemeProvider as MUIThemeProvider,
 } from '@mui/material/styles';
+import breakpoints from "./bearkpoint";
+
 //
 
 type Props = {
@@ -28,13 +30,14 @@ export default function ThemeProvider({ children }: Props) {
             shape: { borderRadius: 8 },
             typography,
             shadows: [] as unknown as Theme['shadows'],
-            customShadows
+            customShadows,
+            breakpoints
         }),
         []
     )
     const theme = createTheme(themeOptions);
     theme.components = componentsOverride(theme);
-    theme.shadows = [] as unknown as Theme['shadows'];
+    theme.shadows = Array(25).fill('none') as Shadows;
 
     return (
         <StyledEngineProvider injectFirst>
