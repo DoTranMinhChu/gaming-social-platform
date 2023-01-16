@@ -40,7 +40,7 @@ export default function ThemeProvider({ children }: Props) {
     theme.shadows = Array(25).fill('none') as Shadows;
 
     return (
-        <StyledEngineProvider injectFirst>
+        <StyledEngineProvider injectFirst={false}>
             <MUIThemeProvider theme={theme}>
                 <CssBaseline />
                 {children}

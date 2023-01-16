@@ -17,6 +17,7 @@ import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import styles from './Navbar.module.scss';
 import Link from 'next/link'
+import { Icon } from '@mui/material';
 
 interface Props {
     window?: () => Window;
@@ -28,22 +29,22 @@ export default function Navbar(props: Props) {
         {
             title: 'Highlights',
             url: 'highlights',
-            icon: <RadioOutLinedIcon />,
+            icon: <RadioOutLinedIcon className={styles['icon-item-menu']} />,
         },
         {
             title: 'Explore',
             url: 'explore',
-            icon: <ExploreOutLinedIcon />,
+            icon: <ExploreOutLinedIcon className={styles['icon-item-menu']} />,
         },
         {
             title: 'Communities',
             url: 'products',
-            icon: <PeopleOutlinedIcon />,
+            icon: <PeopleOutlinedIcon className={styles['icon-item-menu']} />,
         },
         {
             title: 'Record Settings',
             url: 'record-settings',
-            icon: <SettingsOutlinedIcon />,
+            icon: <SettingsOutlinedIcon className={styles['icon-item-menu']} />,
         }
     ];
     const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -65,9 +66,10 @@ export default function Navbar(props: Props) {
         setAnchorElUser(null);
     };
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
+        <AppBar position="static" className={styles.navbar}>
+            <Container maxWidth="xl" >
+                <Toolbar disableGutters className={styles['navbar-container']}>
+
                     <Typography
                         variant="h6"
                         noWrap
@@ -77,6 +79,8 @@ export default function Navbar(props: Props) {
                     >
                         LOGO
                     </Typography>
+
+
 
                     <Box className={styles['menu-mobile']}>
                         <IconButton
@@ -107,33 +111,38 @@ export default function Navbar(props: Props) {
                         >
                             {pages.map((page) => (
 
-                                < MenuItem key={page.url} onClick={handleCloseNavMenu} >
-                                    <Typography textAlign="center">{page.title}</Typography>
+                                <MenuItem key={page.url} onClick={handleCloseNavMenu} >
+                                    <Link href={page.url}>
+                                        <Typography textAlign="center" >{page.title}</Typography>
+                                    </Link>
+
                                 </MenuItem>
+
                             ))}
                         </Menu>
                     </Box>
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
+                    <Link
+                        href="/"
                         className={styles['logo-mobile']}
                     >
                         LOGO
-                    </Typography>
+                    </Link>
                     <Box className={styles['menu-web']}>
                         {pages.map((page) => (
-                            <Link href={page.url} key={page.url}>
-                                <Button
+                            <Link href={page.url} key={page.url} className={styles['item-menu']}>
+                                {/* <Box
                                     key={page.url}
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'white' }}
                                     variant="outlined" startIcon={page.icon}
-                                >
-
+                                 
+                                > */}
+                                {page.icon}
+                                <Typography className={styles['title-item-menu']}>
                                     {page.title}
-                                </Button>
+                                </Typography>
+
+                                {/* </Box> */}
                             </Link>
 
                         ))}

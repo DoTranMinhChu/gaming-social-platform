@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { LOCAL_STORAGE } from 'constants/localStorageConstants';
 import { useEffect } from 'react';
@@ -7,7 +6,10 @@ import { LoadingProvider } from 'providers/LoadingProvider';
 import UserProvider from 'providers/UserProvider';
 import i18n from '../translation/i18n';
 import { I18nextProvider } from 'react-i18next';
+import '../styles/style.css'
 import ThemeProvider from 'themes';
+import variables from '../styles/Variable.module.scss';
+
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -34,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       checkToken();
     }
   }, [])
-
+  console.log(variables)
   return (
     <LoadingProvider>
       <I18nextProvider i18n={i18n}>

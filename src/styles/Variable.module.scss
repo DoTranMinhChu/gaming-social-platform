@@ -78,3 +78,30 @@ $res_xl : "only screen and (min-width: 1536px)";
         @content;
     }
 }
+
+
+// color 
+
+
+$midnight-color: #12182A;
+$midnight-light-color: #181F36;
+$midnight-dark-color : #0D1220;
+
+$sky-color : #008FFF;
+$sky-dark-color: #0088F3;
+
+$white-color: #ffffff;
+$grey-color : #A3A5AF;
+
+
+:export {
+    midnight-color: $midnight-color;
+    midnight-light-color: $midnight-light-color;
+    midnight-dark-color: $midnight-dark-color;
+
+    sky-color: $sky-color;
+    sky-dark-color: $sky-dark-color;
+
+    white-color: $white-color;
+    grey-color: $grey-color;
+}
